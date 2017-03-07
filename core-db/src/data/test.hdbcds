@@ -1,0 +1,14 @@
+namespace LeverXCars37.core_db.data;
+
+context test {
+	type vid : Integer;
+	type sname {
+		fname: String(20);
+		lname: String(20);
+	}
+	
+	entity Human {
+		key id: vid;
+		name: sname;
+	}
+}
