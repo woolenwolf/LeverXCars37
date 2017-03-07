@@ -1,0 +1,37 @@
+_schema-version: '2.0'
+ID: LeverXCars37
+version: 0.0.1
+
+modules:
+ - name: web
+   type: html5
+   path: web
+   requires:
+    - name: levxcars37-uaa
+    
+
+ 
+
+
+ - name: core-db
+   type: hdb
+   path: core-db
+   requires:
+    - name: hdi-container_2
+
+resources:
+ - name: levxcars37-uaa
+   parameters:
+     config_path: ./xs-security.json
+   type: com.sap.xs.uaa
+ - name: hdi-container
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
+
+
+ - name: hdi-container_2
+   properties:
+      hdi-container-name_2: ${service-name}
+   type: com.sap.xs.hdi-container
+
