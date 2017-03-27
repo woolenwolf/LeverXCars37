@@ -1,0 +1,7 @@
+SEQUENCE "LeverXCars37.core_db.sequences::serviceId"
+INCREMENT BY 1 START WITH 1000000
+MINVALUE 1 MAXVALUE 2999999999
+NO CYCLE
+RESET BY
+SELECT IFNULL(MAX(SERVICEID), 0)+1
+FROM "LeverXCars37.core_db.data::core_model.Service"

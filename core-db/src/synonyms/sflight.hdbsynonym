@@ -1,0 +1,20 @@
+{
+  "LeverXCars37.core_db.synonyms::SPFLI": {
+    "target": {
+      "object": "SPFLI",
+      "schema": "SFLIGHT"
+    }
+  },
+  "LeverXCars37.core_db.synonyms::SBOOK": {
+    "target": {
+      "object": "SBOOK",
+      "schema": "SFLIGHT"
+    }
+  },
+  "LeverXCars37.core_db.synonyms::SFLIFHT": {
+    "target": {
+      "object": "SFLIGHT",
+      "schema": "SFLIGHT"
+    }
+  }
+}

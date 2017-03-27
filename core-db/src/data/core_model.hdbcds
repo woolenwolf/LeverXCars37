@@ -1,0 +1,42 @@
+namespace LeverXCars37.core_db.data;
+using "LeverXCars37.core_db.synonyms::KNA1" as Customer;
+using "LeverXCars37.core_db.synonyms::DUMMY" as Dummy;
+
+context core_model {
+   type commonKey: String(20);
+   type carModel: String(10);
+   type sDate: LocalDate;
+   type serviceDescr: String(40);
+   type carDescr: String(30);
+   type amountT: Decimal(15,2);
+   type currencyT: String(5);
+   type carVIN: String(17);
+   type carLicplate: String(10);
+   type customerName: String(15);
+   type addressT: String(55);
+   
+   entity Car {
+       key CARID: commonKey;
+       CUSTID: commonKey;
+       MODEL: carModel;
+       DESCR: carDescr;
+       VIN: carVIN;
+       LICPLATE: carLicplate;
+   };
+   
+   entity Service {
+	   key SERVICEID: commonKey;
+	   key CARID: commonKey;
+	   STARTDATE: sDate;
+	   ENDDATE: sDate;
+	   DESCR: serviceDescr;
+	   AMOUNT: amountT;
+	   CURRENCY: currencyT;
+   };
+   
+   define view CustomerView as select from Customer {
+		CUSTID as "CustomerId",
+		NAME as "CustomerName",
+		ADDRESS as "CustomerAddress"
+   };
+};
